@@ -10,7 +10,7 @@ class LoginTest < MiniTest::Test
 
   def test_post
     @driver.navigate.to "http://localhost:9675"
-    element = @driver.find_element(:id, 'registered_user_email')
+    element = @driver.find_element(:id, 'pro_user_email')
     element.send_keys "zaitrarrio@yahoo.com"
     element.submit
     # assert_equal(@driver.title, "TestingBot - Google Search")
