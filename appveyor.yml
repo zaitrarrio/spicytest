@@ -1,0 +1,26 @@
+---
+version: "{build}"
+branches:
+  only:
+    - master
+clone_depth: 10
+install:
+  - cinst spiceworks
+  - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
+  - ruby --version
+  - gem --version
+  - gem install bundler --no-rdoc --no-ri
+  - bundle install
+  - gem list --details
+  - gem env
+
+build: off
+test_script:
+  - rake test
+after_test:
+  # FIXME: missing `diff` to check manifest differences
+  #- rake -rdevkit travis:after --trace
+
+environment:
+  matrix:
+    - ruby_version: "193"
