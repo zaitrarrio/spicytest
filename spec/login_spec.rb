@@ -9,7 +9,7 @@ class LoginTest < MiniTest::Test
   end
 
   def test_post
-    @driver.navigate.to "http://localhost:9675t"
+    @driver.navigate.to "http://localhost:9675"
     element = @driver.find_element(:id, 'registered_user_email')
     element.send_keys "zaitrarrio@yahoo.com"
     element.submit
